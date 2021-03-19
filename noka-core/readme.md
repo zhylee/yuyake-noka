@@ -9,6 +9,7 @@
 ---
 
 - `annotation` 所有功能注解定义
+- `lang` 常用的数据结构类库
 - `util` 提供的Java工具类库
 - `exception` 常规异常类的申明
 - `ioc` IOC模块
@@ -17,6 +18,5 @@
 - `cron` CRON表达式
 - `env` 系统配置
 - `event` 异步事件的定义
-- `lang` 常用的数据结构类库
 - `network` 网络模块
 - `thread` 线程模型
