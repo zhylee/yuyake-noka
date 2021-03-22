@@ -1,6 +1,6 @@
 package cn.yuyake.core.lock;
 
-import cn.yuyake.core.lang.TimeoutHashMap;
+import cn.yuyake.core.lang.collect.TimeoutHashMap;
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
