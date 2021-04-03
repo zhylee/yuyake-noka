@@ -1,4 +1,4 @@
-package cn.yuyake.reflect;
+package cn.yuyake.relfect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -20,7 +20,7 @@ public class ConstructorCollector {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException,
         IllegalAccessException, InvocationTargetException, InstantiationException {
-        var clazz = Class.forName("cn.yuyake.reflect.ReflectTarget");
+        var clazz = Class.forName("cn.yuyake.relfect.ReflectTarget");
         // 1. 获取所有公有构造方法
         System.out.println("*************所有公有构造方法*************");
         var conArray = clazz.getConstructors();

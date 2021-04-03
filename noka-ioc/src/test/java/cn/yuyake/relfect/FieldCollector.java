@@ -1,4 +1,4 @@
-package cn.yuyake.reflect;
+package cn.yuyake.relfect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -22,7 +22,7 @@ public class FieldCollector {
     public static void main(String[] args)
         throws ClassNotFoundException, NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         // 获取Class对象
-        var reflectTargetClass = Class.forName("cn.yuyake.reflect.ReflectTarget");
+        var reflectTargetClass = Class.forName("cn.yuyake.relfect.ReflectTarget");
         // 1. 获取所有公有的字段
         System.out.println("*************获取所有公有的字段*************");
         var fieldArray = reflectTargetClass.getFields();
