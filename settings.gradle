@@ -2,4 +2,5 @@ rootProject.name = 'noka'
 
 // 核心工程
 include 'noka-core'
+include 'noka-ioc'
 
