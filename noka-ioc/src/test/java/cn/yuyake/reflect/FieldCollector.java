@@ -1,6 +1,7 @@
-package cn.yuyake.relfect;
+package cn.yuyake.reflect;
 
 import cn.yuyake.core.annotation.Controller;
+import cn.yuyake.inject.annotation.Autowired;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,12 +20,21 @@ import java.lang.reflect.InvocationTargetException;
  * create by yeah on 2021/4/3 10:48
  */
 @Controller
-public class FieldCollector {
+public class FieldCollector implements ReflectCollector {
+
+    @Autowired
+    private ConstructorCollector constructorCollector;
+    @Autowired
+    private MethodCollector methodCollector;
+
+    public MethodCollector getMethodCollector() {
+        return methodCollector;
+    }
 
     public static void main(String[] args)
         throws ClassNotFoundException, NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         // 获取Class对象
-        var reflectTargetClass = Class.forName("cn.yuyake.relfect.ReflectTarget");
+        var reflectTargetClass = Class.forName("cn.yuyake.reflect.ReflectTarget");
         // 1. 获取所有公有的字段
         System.out.println("*************获取所有公有的字段*************");
         var fieldArray = reflectTargetClass.getFields();

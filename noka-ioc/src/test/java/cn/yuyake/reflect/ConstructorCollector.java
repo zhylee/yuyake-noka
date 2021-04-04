@@ -1,6 +1,7 @@
-package cn.yuyake.relfect;
+package cn.yuyake.reflect;
 
 import cn.yuyake.core.annotation.Controller;
+import cn.yuyake.inject.annotation.Autowired;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -18,11 +19,18 @@ import java.lang.reflect.InvocationTargetException;
  * create by yeah on 2021/4/3 10:28
  */
 @Controller
-public class ConstructorCollector {
+public class ConstructorCollector implements ReflectCollector {
+
+    @Autowired(value = "MethodCollector")
+    private ReflectCollector reflectCollector;
+
+    public ReflectCollector getReflectCollector() {
+        return reflectCollector;
+    }
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException,
         IllegalAccessException, InvocationTargetException, InstantiationException {
-        var clazz = Class.forName("cn.yuyake.relfect.ReflectTarget");
+        var clazz = Class.forName("cn.yuyake.reflect.ReflectTarget");
         // 1. 获取所有公有构造方法
         System.out.println("*************所有公有构造方法*************");
         var conArray = clazz.getConstructors();

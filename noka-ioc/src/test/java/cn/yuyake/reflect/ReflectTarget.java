@@ -1,4 +1,4 @@
-package cn.yuyake.relfect;
+package cn.yuyake.reflect;
 
 import cn.yuyake.core.annotation.Repository;
 

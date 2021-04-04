@@ -1,4 +1,4 @@
-package cn.yuyake.relfect;
+package cn.yuyake.reflect;
 
 import cn.yuyake.core.annotation.Service;
 import java.lang.reflect.InvocationTargetException;
@@ -20,12 +20,12 @@ import java.lang.reflect.Method;
  * create by yeah on 2021/4/3 11:34
  */
 @Service
-public class MethodCollector {
+public class MethodCollector implements ReflectCollector {
 
     public static void main(String[] args)
         throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         // 1. 获取Class对象
-        var reflectTargetClass = Class.forName("cn.yuyake.relfect.ReflectTarget");
+        var reflectTargetClass = Class.forName("cn.yuyake.reflect.ReflectTarget");
         // 2. 获取所有公有方法
         System.out.println("*************获取所有公有方法，包括父类和Object*************");
         var methodArray = reflectTargetClass.getMethods();
