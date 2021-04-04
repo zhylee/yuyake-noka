@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
  * create by yeah on 2021/4/3 16:54
  */
 public class ClassUtilTest {
+
     @DisplayName("提取目标类方法：extractPackageClass")
     @Test
     public void extractPackageClassTest() {

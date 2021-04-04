@@ -1,5 +1,6 @@
 package cn.yuyake.relfect;
 
+import cn.yuyake.core.annotation.Controller;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
@@ -17,6 +18,7 @@ import java.lang.reflect.InvocationTargetException;
  * <p>
  * create by yeah on 2021/4/3 10:48
  */
+@Controller
 public class FieldCollector {
 
     public static void main(String[] args)

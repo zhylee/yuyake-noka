@@ -1,5 +1,6 @@
 package cn.yuyake.relfect;
 
+import cn.yuyake.core.annotation.Controller;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -16,6 +17,7 @@ import java.lang.reflect.InvocationTargetException;
  * <p>
  * create by yeah on 2021/4/3 10:28
  */
+@Controller
 public class ConstructorCollector {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException,

@@ -1,8 +1,11 @@
 package cn.yuyake.relfect;
 
+import cn.yuyake.core.annotation.Repository;
+
 /**
  * create by yeah on 2021/4/3 10:21
  */
+@Repository
 public class ReflectTarget extends ReflectTargetOrigin {
 
     //------构造函数------

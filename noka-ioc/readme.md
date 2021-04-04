@@ -70,11 +70,35 @@
 
 ![URL](./img/URL.png)
 
-单例模式 Singleton Pattern：确保一个类只有一个实例，并对外提供统一访问方式
+[单例模式](./src/test/java/cn/yuyake/singletion/SingletonDemo.java) Singleton Pattern：确保一个类只有一个实例，并对外提供统一访问方式
 
 - 饿汉模式：类被加载的时候就立即初始化并创建唯一实例
 - 懒汉模式：在被客户端首次调用的时候才创建唯一实例
 - 加入双重检查锁机制的懒汉模式能确保线程安全
 - 装备了枚举的饿汉模式能抵御反射与序列化的进攻，满足容器需求
 
-#### 3. 实现容器
+#### 3. [实现容器](./src/main/java/cn/yuyake/core/BeanContainer.java)
+
+1. 容器的组成
+    - 保存Class对象及其实例的载体
+    - 容器的加载
+    - 容器的操作方式
+2. 实现容器的加载
+    - 配置的管理与获取
+    - 获取指定范围内的Class对象
+    - 依据配置提取Class对象，连同实例一并存入容器
+3. 实现容器的操作方式（涉及容器的增删改查）
+    - 增加、删除操作
+    - 根据Class获取对应实例
+    - 获取所有的Class和实例
+    - 通过注解来获取被注解标注的Class
+    - 通过超类获取对应的子类Class
+    - 获取容器载体保存Class的数量
+
+容器管理的Bean实例（Spring有多种作用域）
+
+- singleton：单例模式（只有一个实现）
+- prototype：原型模式（每次获取都新建实例）
+- request：http请求每次产生新实例
+- session：http session都产生新实例
+- globalsession

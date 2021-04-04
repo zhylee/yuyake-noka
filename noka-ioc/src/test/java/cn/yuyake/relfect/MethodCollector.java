@@ -1,5 +1,6 @@
 package cn.yuyake.relfect;
 
+import cn.yuyake.core.annotation.Service;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -18,6 +19,7 @@ import java.lang.reflect.Method;
  * <p>
  * create by yeah on 2021/4/3 11:34
  */
+@Service
 public class MethodCollector {
 
     public static void main(String[] args)

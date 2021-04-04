@@ -2,7 +2,6 @@ package cn.yuyake.util;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
@@ -98,6 +97,7 @@ public class ClassUtil {
 
     /**
      * 获取Class对象
+     *
      * @param className class全名 = package + 类全名
      * @return Class
      */
@@ -112,9 +112,10 @@ public class ClassUtil {
 
     /**
      * 实例化class
-     * @param clazz Class
+     *
+     * @param clazz      Class
      * @param accessible 是否支持创建出私有class对象的实例
-     * @param <T> class的类型
+     * @param <T>        class的类型
      * @return 类的实例化
      */
     public static <T> T newInstance(Class<?> clazz, boolean accessible) {
