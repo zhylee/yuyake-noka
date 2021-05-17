@@ -1,5 +1,6 @@
 package cn.yuyake.core;
 
+import cn.yuyake.aop.annotation.Aspect;
 import cn.yuyake.core.annotation.Component;
 import cn.yuyake.core.annotation.Controller;
 import cn.yuyake.core.annotation.Repository;
@@ -32,7 +33,7 @@ public class BeanContainer {
     private final Map<Class<?>, Object> beanMap = new ConcurrentHashMap<>();
     // 加载bean的注解列表
     private static final List<Class<? extends Annotation>> BEAN_ANNOTATION =
-        Arrays.asList(Component.class, Controller.class, Repository.class, Service.class);
+        Arrays.asList(Component.class, Controller.class, Repository.class, Service.class, Aspect.class);
 
     private enum ContainerHolder {
         HOLDER;

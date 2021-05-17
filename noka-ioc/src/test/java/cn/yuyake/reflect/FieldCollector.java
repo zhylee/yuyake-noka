@@ -2,6 +2,9 @@ package cn.yuyake.reflect;
 
 import cn.yuyake.core.annotation.Controller;
 import cn.yuyake.inject.annotation.Autowired;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
@@ -22,12 +25,15 @@ import java.lang.reflect.InvocationTargetException;
 @Controller
 public class FieldCollector implements ReflectCollector {
 
+    private static final Logger logger = LogManager.getLogger(FieldCollector.class);
+
     @Autowired
     private ConstructorCollector constructorCollector;
     @Autowired
     private MethodCollector methodCollector;
 
     public MethodCollector getMethodCollector() {
+        logger.info("MethodCollector.getMethodCollector 被执行啦");
         return methodCollector;
     }
 
