@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Method;
 
-@Aspect(value = Controller.class)
+@Aspect(pointcut = "within(cn.yuyake.reflect.*)")
 @Order(10)
 public class ControllerInfoRecordAspect extends DefaultAspect {
 

@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Method;
 
-@Aspect(value = Controller.class)
+@Aspect(pointcut = "execution(* cn.yuyake.reflect..*.*(..))")
 @Order(0)
 public class ControllerTimeCalculatorAspect extends DefaultAspect {
 

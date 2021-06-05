@@ -43,7 +43,9 @@ public class AspectListExecutor implements MethodInterceptor {
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
         Object returnValue = null;
+        collectAccurateMatchedAspectList(method);
         if (ValidationUtil.isEmpty(sortedAspectInfoList)) {
+            returnValue = proxy.invokeSuper(obj, args);
             return returnValue;
         }
         // 1. 按照 order 的顺序升序执行完所有 Aspect 的 before 方法
@@ -60,6 +62,13 @@ public class AspectListExecutor implements MethodInterceptor {
 
 
         return returnValue;
+    }
+
+    private void collectAccurateMatchedAspectList(Method method) {
+        if (ValidationUtil.isEmpty(sortedAspectInfoList)) {
+            return;
+        }
+        sortedAspectInfoList.removeIf(aspectInfo -> !aspectInfo.getPointcutLocator().accurateMatches(method));
     }
 
     // 1. 按照 order 的顺序升序执行完所有 Aspect 的 before 方法
